@@ -1,0 +1,22 @@
+div.title {
+  width: auto;
+  text-align: center;
+  margin-top: 250px;
+  margin-bottom: 150px;
+  font-size: 2em;
+}
+
+h1 {
+  text-shadow: 2px 2px #00E4FF;
+}
+
+body {
+  background: url(Images/Background-Track.png) repeat;
+  background-size: 100%;
+}
+
+div.button{
+  width: auto;
+  text-align: center;
+  margin-top: 100px;
+}
