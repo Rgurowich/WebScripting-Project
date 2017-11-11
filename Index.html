@@ -6,6 +6,7 @@
   <script src="qunit-2.4.0.js"></script>
   <link rel="stylesheet" href="Style.css">
   <script src="Game.js"></script>
+  <script src="popup.js"></script>
   <title>DoctorDash - Game</title>
 </head>
 
@@ -20,9 +21,37 @@
   </div>
 
   <div class="button">
-    <button id="options"> Options </button>
+    <button id="howToPlay"> How To Play</button>
   </div>
+  
+  
+  <div id="howToPlayPopup" class="modal">
 
+  <div class="popupContent">
+    <span class="close">&times;</span>
+    <p>Here is How To Play!</p>
+  </div>
+</div>
+
+<script>
+var modal = document.getElementById('howToPlayPopup');
+var btn = document.getElementById("howToPlay");
+var span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
 </body>
 
 </html>
