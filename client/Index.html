@@ -1,0 +1,69 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="client/Style.css">
+  <script src="/socket.io/socket.io.js"></script>
+
+  <title>DoctorDash - Game</title>
+</head>
+
+<body background="client/Images/Background-Track.png">
+
+  <div class="title">
+    <h1> Doctor Dash </h1>
+  </div>
+
+  <div class="button">
+    <form action="http://localhost:8081/game">
+      <input type="submit" value="Start Game" />
+    </form>
+  </div>
+
+  <div class="button">
+    <button id="howToPlay"> How To Play</button>
+  </div>
+
+
+  <div id="howToPlayPopup" class="modal">
+
+    <div class="popupContent">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>How to Play!</h2>
+      </div>
+      <div class="modal-body">
+        <p>Use the arrow keys to move and rotate your car</p>
+        <image src="client/Images/Arrows.png" alt="Arrows" height="200" width="300"></image>
+        <p>Some other text...</p>
+      </div>
+      <div class="modal-footer">
+        <h3>Modal Footer</h3>
+      </div>
+
+    </div>
+  </div>
+  <script>
+    var socket = io();
+    var modal = document.getElementById('howToPlayPopup');
+    var btn = document.getElementById("howToPlay");
+    var span = document.getElementsByClassName("close")[0];
+
+
+
+
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+
+  </script>
+</body>
+
+</html>
