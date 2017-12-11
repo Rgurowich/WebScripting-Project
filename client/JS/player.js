@@ -1,5 +1,7 @@
 var Player = {};
+Player.socket = io('http://localhost/8081');
 Player.socket = io.connect();
+
 
 Player.askNewPlayer = function(){
     console.log("askNewPlayer");
@@ -16,5 +18,3 @@ Player.socket.on('allplayers',function(data){
         game.addNewPlayer(data[i].id,data[i].x,data[i].y);
     }
 })
-
-module.exports = Player;
